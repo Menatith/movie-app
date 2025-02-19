@@ -1,0 +1,48 @@
+<div class="movie">
+  <div class="img-details">
+    <img [src]="movieFull.Poster" alt="" />
+    <div class="details-main">
+      <h3>{{ movieFull.Title }} ({{ movieFull.Released }})</h3>
+
+      <div class="genre-list">
+        <ul>
+          @for(genre of movieFull.GenreList; track genre) {
+          <li>{{ genre }}</li>
+          }
+          <li class="rating">{{ movieFull.Rated }}</li>
+        </ul>
+      </div>
+
+      <div>{{ movieFull.Year }}</div>
+
+      <div class="actor-list">
+        <div class="list-label">Cast</div>
+        <ul>
+          @for(actor of movieFull.ActorsList; track actor) {
+          <li>{{ actor }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="director-list">
+        <div class="list-label">Director</div>
+        <div class="director">{{ movieFull.Director }}</div>
+      </div>
+
+      <div class="writer-list">
+        <div class="list-label">Writers</div>
+        <ul>
+          @for(writer of movieFull.WriterList; track writer) {
+          <li>{{ writer }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="details-secondary">
+    <p>{{ movieFull.Plot }}</p>
+
+    <div class="awards">Awards {{ movieFull.Awards }}</div>
+  </div>
+</div>

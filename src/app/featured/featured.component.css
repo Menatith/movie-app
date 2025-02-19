@@ -1,0 +1,23 @@
+.featured-container {
+  padding: 2rem 1rem;
+  container-type: inline-size;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@container (min-width: 75rem) {
+  .movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    app-movie {
+      display: block;
+      max-width: 45%;
+    }
+  }
+}

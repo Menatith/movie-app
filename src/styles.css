@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+/******** Variables ********/
+:root {
+  --text-white: #e9e9e8;
+  --color-primary: #f7941e;
+  --color-light: #eec42a;
+  --oklch-color-primary: oklch(75.42% 0.165 62.75);
+  --oklch-color-light: oklch(83.36% 0.1611 92.05);
+}
+
+html {
+  box-sizing: border-box;
+  interpolate-size: allow-keywords;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: #121212;
+  color: var(--text-white);
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Form fields grow or shrink according to content */
+/* combine with min- and max- block-size and inline-size */
+textarea,
+select,
+input {
+  field-sizing: content;
+}
+
+/*** Typography ***/
+h1,
+h2,
+h3 {
+  font-family: "Philosopher", serif;
+}
+
+p {
+  font-size: clamp(1.2rem, 1.2rem + 0vw, 1.2rem);
+}

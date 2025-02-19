@@ -1,0 +1,9 @@
+<section class="featured-container">
+  <div class="title-wrapper">
+    <h2>Featured Movies</h2>
+  </div>
+
+  <div class="movies-container">
+    <app-movie *ngFor="let movie of movieList" [movieFull]="movie"></app-movie>
+  </div>
+</section>

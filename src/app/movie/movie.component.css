@@ -1,0 +1,136 @@
+.movie {
+  padding: 2rem 1rem;
+}
+
+ul {
+  padding: 0;
+  margin: 0 0 0 0;
+}
+
+li {
+  list-style: none;
+  padding: 0 1rem 0 0.2rem;
+}
+
+.list-label {
+  font-weight: bold;
+}
+
+.writer-list,
+.genre-list,
+.actor-list,
+.director-list {
+  padding-bottom: 1rem;
+  display: flex;
+}
+
+.actor-list {
+  padding-top: 1rem;
+  ul {
+    margin-left: 2.5rem;
+  }
+}
+
+.writer-list {
+  ul {
+    margin-left: 1.5rem;
+  }
+}
+
+.director {
+  margin-left: 1rem;
+}
+
+.genre-list {
+  ul {
+    display: flex;
+  }
+
+  li {
+    border: 1px solid var(--color-primary);
+    background-color: #2b2c33;
+    padding: 0.2rem 0.5rem;
+    border-radius: 16px;
+    margin-right: 0.5rem;
+    margin-top: 0.3rem;
+  }
+
+  .rating {
+    border: none;
+    background-color: #2b2c33;
+    padding: 0.2rem 0.5rem;
+    border-radius: 16px;
+    margin-right: 0.5rem;
+    margin-top: 0.3rem;
+    min-width: 3rem;
+    text-align: center;
+  }
+}
+
+@container (min-width: 45rem) {
+  .movie {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .img-details {
+    display: flex;
+    width: 100%;
+  }
+
+  img {
+    object-fit: contain;
+    width: clamp(150px, 20vw, 300px);
+    height: auto;
+    align-self: flex-start;
+    padding-top: 1rem;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .details-main {
+    padding-left: 1rem;
+  }
+
+  .writer-list,
+  .actor-list {
+    li:nth-child(n + 2) {
+      list-style-type: disc;
+    }
+
+    li {
+      margin-right: 0.5rem;
+    }
+  }
+
+  p {
+    margin: 0;
+    padding-top: 1rem;
+  }
+
+  .awards {
+    padding-top: 1rem;
+  }
+}
+
+@container (min-width: 75rem) {
+  .writer-list,
+  .actor-list {
+    li:nth-child(n + 2) {
+      list-style: none;
+    }
+  }
+
+  ul {
+    display: block;
+  }
+
+  .genre-list {
+    ul {
+      display: flex;
+    }
+  }
+}

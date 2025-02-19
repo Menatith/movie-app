@@ -1,0 +1,34 @@
+<div class="heading-wrapper">
+  <h2>Search for Movies</h2>
+</div>
+
+<section class="search-bar">
+  <form
+    (ngSubmit)="getFiveSearchedMovies(this.searchValue)"
+    #searchForm="ngForm"
+  >
+    <input
+      type="text"
+      class="form-control"
+      id="search"
+      required
+      name="search"
+      placeholder="Search by title"
+      [(ngModel)]="this.searchValue"
+      maxlength="50"
+    />
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+</section>
+<section class="results-container">
+  <!-- Probably not the world's most elegant solution but certainly the easiest -->
+  <!-- Prettier solution would probably be with a promise resolution and async pipe -->
+  @if (notFound) {
+  <div class="no-results">No results found</div>
+  }
+  <div class="movies-container">
+    @for(movieFull of movieFullList; track movieFull) {
+    <app-movie [movieFull]="movieFull"></app-movie>
+    }
+  </div>
+</section>
